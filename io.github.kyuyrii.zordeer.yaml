@@ -49,8 +49,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Kyuyrii/Zordeer.git
-        tag: '5.1'
-        commit: a6ac3621309cc4b86df90cb2eb7eb422cbd2d711
+        tag: '5.2'
+        commit: 736c805613160bf68b07f5d4d8225567554eccd7
     build-commands:
       - install -Dm755 zordeer /app/bin/zordeer
       - install -Dm644 io.github.kyuyrii.zordeer.desktop /app/share/applications/io.github.kyuyrii.zordeer.desktop
