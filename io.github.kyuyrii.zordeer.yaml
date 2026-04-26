@@ -42,11 +42,6 @@ add-extensions:
     autodownload: true
     autodelete: false
 
-  org.kde.KStyle.Kvantum:
-    version: '6.10'
-    autodownload: true
-    autodelete: false
-
 modules:
   - name: Zordeer
     builddir: true
@@ -54,8 +49,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Kyuyrii/Zordeer.git
-        tag: '6.3'
-        commit: ff84f51e8b690221cab85b82b59bb924fcc51dc3
+        tag: '6.4'
+        commit: 6d5104e6b7213004eff7012bf66a48cab92cd9be
     build-commands:
       - install -Dm755 zordeer /app/bin/zordeer
       - install -Dm644 io.github.kyuyrii.zordeer.desktop /app/share/applications/io.github.kyuyrii.zordeer.desktop
