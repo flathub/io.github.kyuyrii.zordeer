@@ -20,7 +20,7 @@ finish-args:
   - --share=network
   - --share=ipc
   - --socket=wayland
-  - --socket=fallback-x11
+  - --socket=x11
   - --socket=pulseaudio # notification sound
   - --allow=devel # ubisoft connect and other launchers
   - --allow=multiarch
@@ -38,7 +38,7 @@ finish-args:
 add-extensions:
   org.freedesktop.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
-    version: 25.08
+    version: "25.08"
 
   org.freedesktop.Platform.GL32:
     directory: lib/i386-linux-gnu/GL
@@ -55,8 +55,8 @@ add-extensions:
 
   org.freedesktop.Platform.VAAPI.Intel.i386:
     directory: lib/i386-linux-gnu/dri/intel-vaapi-driver
-    version: 25.08
-    versions: 25.08
+    version: "25.08"
+    versions: "25.08"
     autodelete: false
     no-autodownload: true
     add-ld-path: lib
@@ -65,8 +65,8 @@ add-extensions:
 
   org.freedesktop.Platform.VAAPI.nvidia.i386:
     directory: i386/nvidia-vaapi-driver
-    version: 25.08
-    versions: 25.08
+    version: "25.08"
+    versions: "25.08"
     autodelete: false
     no-autodownload: true
     add-ld-path: lib
@@ -75,13 +75,13 @@ add-extensions:
 
   org.freedesktop.Platform.codecs_extra.i386:
     directory: lib/i386-linux-gnu/codecs-extra
-    version: 25.08-extra
+    version: "25.08-extra"
     autodelete: false
     add-ld-path: lib
 
   org.freedesktop.Platform.VulkanLayer.MangoHud:
     directory: lib/extensions/vulkan/MangoHud
-    version: 25.08
+    version: "25.08"
     autodownload: true
     autodelete: false
 
@@ -91,8 +91,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Kyuyrii/Zordeer.git
-        tag: '8.3'
-        commit: b77a04f0960fb0a07ffcdbe71c98f4e86b06fbea
+        tag: "9.1"
+        commit: cb9e7b4bb2fcba67193b54df2ffa319b035cb5cc
     build-commands:
       - make install PREFIX=/app
     modules:
@@ -104,6 +104,7 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p /app/lib/i386-linux-gnu
+      - mkdir -p /app/lib/i386-linux-gnu/codecs-extra/lib
       - mkdir -p /app/lib/i386-linux-gnu/GL
       - mkdir -p /app/lib/i386-linux-gnu/dri/intel-vaapi-driver
       - mkdir -p /app/i386/nvidia-vaapi-driver
@@ -115,6 +116,5 @@ modules:
         dest-filename: ld.so.conf
         contents: |
           /app/lib32
+          /app/lib/i386-linux-gnu/codecs-extra/lib
           /app/lib/i386-linux-gnu
-          /app/i386
-          /usr/lib/x86_64-linux-gnu/dri/intel-vaapi-driver/lib/
