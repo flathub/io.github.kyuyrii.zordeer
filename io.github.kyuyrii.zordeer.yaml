@@ -91,8 +91,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Kyuyrii/Zordeer.git
-        tag: "9.1"
-        commit: cb9e7b4bb2fcba67193b54df2ffa319b035cb5cc
+        tag: "9.2"
+        commit: c97753921010af59ca32e56f4cec2ad59fad72ab
     build-commands:
       - make install PREFIX=/app
     modules:
